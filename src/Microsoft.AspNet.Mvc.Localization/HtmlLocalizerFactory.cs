@@ -2,28 +2,49 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
+using Microsoft.Framework.Internal;
 using Microsoft.Framework.Localization;
 using Microsoft.Framework.WebEncoders;
 
 namespace Microsoft.AspNet.Mvc.Localization
 {
+    /// <summary>
+    /// An <see cref="IHtmlLocalizerFactory"/> that creates instances of <see cref="HtmlLocalizer"/>.
+    /// </summary>
     public class HtmlLocalizerFactory : IHtmlLocalizerFactory
     {
         private readonly IStringLocalizerFactory _factory;
         private readonly IHtmlEncoder _encoder;
 
-        public HtmlLocalizerFactory(IStringLocalizerFactory localizerFactory, IHtmlEncoder encoder)
+        /// <summary>
+        /// Creates a new <see cref="HtmlLocalizer"/>.
+        /// </summary>
+        /// <param name="localizerFactory">The <see cref="IStringLocalizerFactory"/>.</param>
+        /// <param name="encoder">The <see cref="IHtmlEncoder"/>.</param>
+        public HtmlLocalizerFactory([NotNull] IStringLocalizerFactory localizerFactory, [NotNull] IHtmlEncoder encoder)
         {
             _factory = localizerFactory;
             _encoder = encoder;
         }
 
-        public virtual IHtmlLocalizer Create(Type thing)
+        /// <summary>
+        /// Creates a <see cref="HtmlLocalizer"/> using the <see cref="System.Reflection.Assembly"/> and
+        /// <see cref="Type.FullName"/> of the specified <see cref="Type"/>.
+        /// </summary>
+        /// <param name="resourceSource">The <see cref="Type"/>.</param>
+        /// <returns>The <see cref="HtmlLocalizer"/>.</returns>
+        public virtual IHtmlLocalizer Create([NotNull] Type resourceSource)
         {
-            return new HtmlLocalizer(_factory.Create(thing), _encoder);
+            return new HtmlLocalizer(_factory.Create(resourceSource), _encoder);
         }
 
-        public virtual IHtmlLocalizer Create(string baseName, string location)
+        /// <summary>
+        /// Creates a <see cref="HtmlLocalizer"/>.
+        /// </summary>
+        /// <param name="baseName">The base name of the resource to load strings from.</param>
+        /// <param name="location">The location to load resources from.</param>
+        /// <returns>The <see cref="HtmlLocalizer"/>.</returns>
+        public virtual IHtmlLocalizer Create([NotNull] string baseName, [NotNull] string location)
         {
             var localizer = _factory.Create(baseName, location);
             return new HtmlLocalizer(localizer, _encoder);

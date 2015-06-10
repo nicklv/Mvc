@@ -172,6 +172,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "LocalizationWebSite", "test
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.AspNet.Mvc.Localization", "src\Microsoft.AspNet.Mvc.Localization\Microsoft.AspNet.Mvc.Localization.xproj", "{50893B10-5735-4F35-9995-F81DA3F0189E}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Microsoft.AspNet.Mvc.Localization.Test", "test\Microsoft.AspNet.Mvc.Localization.Test\Microsoft.AspNet.Mvc.Localization.Test.xproj", "{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1038,6 +1040,18 @@ Global
 		{50893B10-5735-4F35-9995-F81DA3F0189E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{50893B10-5735-4F35-9995-F81DA3F0189E}.Release|x86.ActiveCfg = Release|Any CPU
 		{50893B10-5735-4F35-9995-F81DA3F0189E}.Release|x86.Build.0 = Release|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Debug|x86.Build.0 = Debug|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1122,5 +1136,6 @@ Global
 		{DA000953-7532-4DF5-8DB9-8143DF98D999} = {3BA657BF-28B1-42DA-B5B0-1C4601FCF7B1}
 		{FCFE6024-2720-49B4-8257-9DBC6114F0F1} = {16703B76-C9F7-4C75-AE6C-53D92E308E3C}
 		{50893B10-5735-4F35-9995-F81DA3F0189E} = {32285FA4-6B46-4D6B-A840-2B13E4C8B58E}
+		{8FC726B5-E766-44E0-8B38-1313B6D8D9A7} = {3BA657BF-28B1-42DA-B5B0-1C4601FCF7B1}
 	EndGlobalSection
 EndGlobal

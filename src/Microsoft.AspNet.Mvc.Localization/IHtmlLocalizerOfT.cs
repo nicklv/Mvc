@@ -3,6 +3,10 @@
 
 namespace Microsoft.AspNet.Mvc.Localization
 {
+    /// <summary>
+    /// An <see cref="IHtmlLocalizer"/> that provides strings for <see cref="T"/>.
+    /// </summary>
+    /// <typeparam name="T">The <see cref="System.Type"/> to provide strings for.</typeparam>
     public interface IHtmlLocalizer<TResourceSource> : IHtmlLocalizer
     {
 

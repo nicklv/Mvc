@@ -12,5 +12,10 @@ namespace LocalizationWebSite.Controllers
         {
             return View();
         }
+
+        public IActionResult LocPage()
+        {
+            return View();
+        }
     }
 }
