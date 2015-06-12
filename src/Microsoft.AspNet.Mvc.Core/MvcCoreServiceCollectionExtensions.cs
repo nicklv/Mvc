@@ -20,13 +20,38 @@ using Microsoft.Framework.OptionsModel;
 
 namespace Microsoft.Framework.DependencyInjection
 {
+    public interface IMvcBuilder
+    {
+        IServiceCollection Services { get; }
+    }
+
+    public class MvcBuilder : IMvcBuilder
+    {
+        public MvcBuilder(IServiceCollection services)
+        {
+            Services = services;
+        }
+
+        public IServiceCollection Services { get; }
+    }
+
     public static class MvcCoreServiceCollectionExtensions
     {
         public static IServiceCollection AddMinimalMvc([NotNull] this IServiceCollection services)
         {
-            ConfigureDefaultServices(services);
+            return AddMinimalMvc(services, null);
+        }
 
+        public static IServiceCollection AddMinimalMvc([NotNull] this IServiceCollection services, Action<IMvcBuilder> configure)
+        {
+            ConfigureDefaultServices(services);
             AddMvcCoreServices(services);
+
+            if (configure != null)
+            {
+                var builder = new MvcBuilder(services);
+                configure(builder);
+            }
 
             return services;
         }
