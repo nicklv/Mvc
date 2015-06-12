@@ -1,8 +1,8 @@
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
-using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc.Internal;
 using Microsoft.Framework.Internal;
@@ -24,8 +24,8 @@ namespace Microsoft.AspNet.Mvc
         {
             _serializerSettings = serializerSettings;
 
-            SupportedEncodings.Add(Encodings.UTF8EncodingWithoutBOM);
-            SupportedEncodings.Add(Encodings.UTF16EncodingLittleEndian);
+            SupportedEncodings.Add(Encoding.UTF8);
+            SupportedEncodings.Add(Encoding.Unicode);
             SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/json"));
             SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("text/json"));
         }

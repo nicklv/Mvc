@@ -4,7 +4,7 @@
 using Microsoft.AspNet.Mvc.Internal;
 using Newtonsoft.Json;
 
-namespace Microsoft.AspNet.Mvc
+namespace Microsoft.Framework.DependencyInjection
 {
     /// <summary>
     /// Provides programmatic configuration for JSON in the MVC framework.

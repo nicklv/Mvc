@@ -14,6 +14,7 @@
         "Microsoft.AspNet.JsonPatch": "1.0.0-*",
         "Microsoft.AspNet.Mvc.Common": { "version": "6.0.0-*", "type": "build" },
         "Microsoft.AspNet.Mvc.Core": "6.0.0-*",
+        "Microsoft.AspNet.Mvc.Formatters.Json": "6.0.0-*",
         "Microsoft.Framework.BufferEntryCollection.Sources": { "version": "1.0.0-*", "type": "build" },
         "Microsoft.Framework.ClosedGenericMatcher.Sources": { "version": "1.0.0-*", "type": "build" },
         "Microsoft.Framework.CopyOnWriteDictionary.Sources": { "version": "1.0.0-*", "type": "build" },

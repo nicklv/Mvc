@@ -20,21 +20,6 @@ using Microsoft.Framework.OptionsModel;
 
 namespace Microsoft.Framework.DependencyInjection
 {
-    public interface IMvcBuilder
-    {
-        IServiceCollection Services { get; }
-    }
-
-    public class MvcBuilder : IMvcBuilder
-    {
-        public MvcBuilder(IServiceCollection services)
-        {
-            Services = services;
-        }
-
-        public IServiceCollection Services { get; }
-    }
-
     public static class MvcCoreServiceCollectionExtensions
     {
         public static IServiceCollection AddMinimalMvc([NotNull] this IServiceCollection services)
@@ -42,7 +27,9 @@ namespace Microsoft.Framework.DependencyInjection
             return AddMinimalMvc(services, null);
         }
 
-        public static IServiceCollection AddMinimalMvc([NotNull] this IServiceCollection services, Action<IMvcBuilder> configure)
+        public static IServiceCollection AddMinimalMvc(
+            [NotNull] this IServiceCollection services,
+            Action<IMvcBuilder> configure)
         {
             ConfigureDefaultServices(services);
             AddMvcCoreServices(services);
@@ -181,6 +168,16 @@ namespace Microsoft.Framework.DependencyInjection
             services.AddNotifier();
             services.Configure<RouteOptions>(
                 routeOptions => routeOptions.ConstraintMap.Add("exists", typeof(KnownRouteValueConstraint)));
+        }
+
+        private class MvcBuilder : IMvcBuilder
+        {
+            public MvcBuilder(IServiceCollection services)
+            {
+                Services = services;
+            }
+
+            public IServiceCollection Services { get; }
         }
     }
 }
