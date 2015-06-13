@@ -5,6 +5,7 @@
         "warningsAsErrors": false
     },
     "dependencies": {
+        "Microsoft.AspNet.Mvc.ApiFeatures": "6.0.0-*",
         "Microsoft.AspNet.Mvc.Common": { "type": "build", "version": "6.0.0-*" },
         "Microsoft.AspNet.Mvc.Extensions": "6.0.0-*",
         "Microsoft.AspNet.Mvc.Formatters.Json": "6.0.0-*",

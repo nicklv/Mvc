@@ -1,0 +1,34 @@
+﻿{
+    "description": "Extensions to the core MVC runtime",
+    "version": "6.0.0-*",
+    "compilationOptions": {
+        "warningsAsErrors": true
+    },
+    "dependencies": {
+        "Microsoft.AspNet.Mvc.Common": { "version": "6.0.0-*", "type": "build" },
+        "Microsoft.AspNet.Mvc.Core": "6.0.0-*",
+        "Microsoft.Framework.BufferEntryCollection.Sources": { "version": "1.0.0-*", "type": "build" },
+        "Microsoft.Framework.ClosedGenericMatcher.Sources": { "version": "1.0.0-*", "type": "build" },
+        "Microsoft.Framework.CopyOnWriteDictionary.Sources": { "version": "1.0.0-*", "type": "build" },
+        "Microsoft.Framework.NotNullAttribute.Sources": { "version": "1.0.0-*", "type": "build" },
+        "Microsoft.Framework.PropertyActivator.Sources": { "version": "1.0.0-*", "type": "build" },
+        "Microsoft.Framework.PropertyHelper.Sources": { "version": "1.0.0-*", "type": "build" },
+        "Newtonsoft.Json": "6.0.6"
+    },
+
+    "frameworks": {
+        "dnx451": {
+            "frameworkAssemblies": {
+                "System.ComponentModel.DataAnnotations": "",
+                "System.Runtime.Serialization": ""
+            }
+        },
+        "dnxcore50": {
+            "dependencies": {
+                "System.ComponentModel.Annotations": "4.0.10-beta-*",
+                "System.Runtime.Serialization.Primitives": "4.0.10-beta-*",
+                "Microsoft.CSharp": "4.0.0-beta-*"
+            }
+        }
+    }
+}
